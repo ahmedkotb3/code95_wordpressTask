@@ -1,0 +1,79 @@
+body {
+  font-family: "Inter", sans-serif;
+  margin: 6em 4em;
+}
+customBtn {
+  background-color: #df001e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.navbar-expand-lg .navbar-collapse {
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.custom-logo {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.menu-item a {
+  color: #fff;
+  text-decoration: none;
+}
+h2 {
+  font-size: 2.5em;
+  color: #df001e;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+.card-title {
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limits to two lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-body {
+  color: white;
+  position: absolute;
+  bottom: 0;
+}
+.card-img-overlay {
+  align-content: end;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  background: #df001e;
+  border-radius: 50%;
+  padding: 15px;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #fff;
+  font-size: 1em !important;
+}
+.top-story a {
+  color: #000;
+  text-decoration: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limits to two lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-img-overlay .badge.bg-danger {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.badge.bg-danger {
+  border-radius: 0;
+}
+.hr {
+  opacity: 1;
+}
