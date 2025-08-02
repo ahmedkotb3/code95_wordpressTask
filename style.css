@@ -2,13 +2,24 @@ body {
   font-family: "Inter", sans-serif;
   margin: 6em 4em;
 }
-customBtn {
-  background-color: #df001e;
-  color: white;
+@media screen and (max-width: 768px) {
+  body {
+    margin: 2em 1em;
+  }
+}
+.customBtn {
+  margin-left: -40px;
+  position: relative;
+  background: none;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+}
+.customBtn svg {
+  position: absolute;
+  color: #dc3545;
+  margin-right: -68px;
+  justify-content: center;
+  align-items: center;
+  align-self: anchor-center;
 }
 .navbar-expand-lg .navbar-collapse {
   justify-content: space-between;
@@ -60,11 +71,11 @@ h2 {
 .top-story a {
   color: #000;
   text-decoration: none;
-  display: -webkit-box;
+  /* display: -webkit-box;
   -webkit-line-clamp: 1; /* Limits to two lines */
-  -webkit-box-orient: vertical;
+  /* -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 }
 .card-img-overlay .badge.bg-danger {
   padding: 10px;
@@ -76,4 +87,30 @@ h2 {
 }
 .hr {
   opacity: 1;
+}
+.top-stories {
+  border-left: 1px solid #000;
+}
+.top-stories .top-story {
+  padding: 0.5em;
+}
+
+/* Swiper fixes for Bootstrap themes */
+.swiper {
+  width: 100%;
+  padding: 20px 0;
+}
+.swiper-wrapper {
+  display: flex;
+}
+.swiper-slide {
+  flex-shrink: 0;
+  width: auto !important;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.owl-carousel {
+  width: 100%;
+  z-index: 1;
 }

@@ -69,7 +69,7 @@
 							'container_class' => 'navbar-nav',
 							'depth' => 2,
 							'fallback_cb' => false,
-							'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0',
+							'menu_class' => 'navbar-nav mb-2 mb-lg-0',
 							'walker' => new wp_bootstrap_navwalker()
 						)
 					);

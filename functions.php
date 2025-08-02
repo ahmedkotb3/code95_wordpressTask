@@ -149,10 +149,14 @@ function code95_task_scripts()
 	wp_enqueue_style('code95-task-inter', 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap
 ', array(), _S_VERSION);
 
-	// Load jQuery.
-	wp_enqueue_script('jquery');
+
+	// wp_enqueue_style('owl-carousel-css', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
+	// wp_enqueue_style('owl-theme-css', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
+	// wp_enqueue_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', array('jquery'), null);
+	// wp_enqueue_script('owl-init', get_template_directory_uri() . '/js/owl-init.js', array('owl-carousel-js'), null);
+
 	// Load Bootstrap JS.
-	wp_enqueue_script('code95-task-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array('jquery'), '5.3.2', true);
+	wp_enqueue_script('code95-task-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array('jquery'), '5.3.2');
 
 	// Load Bootstrap CSS.
 	wp_enqueue_style('code95-task-bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css', '5.3.2', _S_VERSION);
@@ -164,6 +168,10 @@ function code95_task_scripts()
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
+
+	wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+	wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null);
+	wp_enqueue_script('swiper-init', get_template_directory_uri() . '/js/swiper.js', array('swiper-js'), null);
 }
 add_action('wp_enqueue_scripts', 'code95_task_scripts');
 
@@ -287,13 +295,7 @@ function code95_save_feature_post_meta_box($post_id)
 }
 add_action('save_post', 'code95_save_feature_post_meta_box');
 
-// slider
-function code95_task_enqueue_scripts()
-{
-	wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
-	wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
-}
-add_action('wp_enqueue_scripts', 'code95_task_enqueue_scripts');
+
 
 // Function to get post views
 function get_post_views($postID)
@@ -338,4 +340,5 @@ add_action('wp_head', function () {
 		}
 	}
 });
+
 

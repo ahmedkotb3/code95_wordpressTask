@@ -40,7 +40,7 @@ get_header();
     </section>
 
     <section id="egypt-news">
-        <hr class="hr border border-black border-5" />
+        <hr class="hr border border-black border-5">
         <h2>Egy News</h2>
         <div class="swiper egypt-swiper">
             <div class="swiper-wrapper">
@@ -48,7 +48,7 @@ get_header();
                 $egypt_news = new WP_Query(array(
                     'category_name' => 'egypt',
                     'post_type' => 'post',
-                    'posts_per_page' => 12, // Show more for sliding
+                    'posts_per_page' => 12,
                 ));
                 if ($egypt_news->have_posts()):
                     while ($egypt_news->have_posts()):
@@ -61,39 +61,14 @@ get_header();
                 endif;
                 ?>
             </div>
-            <!-- Add navigation buttons -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-            <!-- Add pagination if needed -->
-            <div class="swiper-pagination"></div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                new Swiper('.egypt-swiper', {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                    loop: true,
-                    breakpoints: {
-                        0: { slidesPerView: 1 },
-                        576: { slidesPerView: 2 },
-                        992: { slidesPerView: 4 }
-                    }
-                });
-            });
-        </script>
     </section>
 
     <section>
         <div class="row">
-            <div class="col-8">
+            <div class="col-lg-8 col-sm-12">
                 <hr class="hr border border-black border-5" />
                 <h2>Features</h2>
                 <div class="row">
@@ -116,37 +91,36 @@ get_header();
                     ?>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-sm-12">
                 <hr class="hr border border-black border-5" />
                 <h2>Top 5 Stories</h2>
-                <?php
-                $top_stories = new WP_Query(array(
-                    'post_type' => 'post',
-                    'posts_per_page' => 5,
-                    'meta_key' => 'post_views_count',
-                    'orderby' => 'meta_value_num',
-                    'order' => 'DESC',
-                ));
-                if ($top_stories->have_posts()):
-                    $index = 1;
-                    while ($top_stories->have_posts()):
-                        $top_stories->the_post();
-                        echo '<div class="top-story">';
-                        echo '<span class=" badge bg-danger story-index">' . $index . '</span> ';
-                        echo '<a href="' . esc_url(get_permalink()) . '">' . get_the_title() . '</a>';
-                        echo '<hr/>';
-                        echo '</div>';
-                        $index++;
-                    endwhile;
-                    wp_reset_postdata();
-                endif;
-                ?>
-                <div class="vr"></div>
+                <div class="top-stories">
+                    <?php
+                    $top_stories = new WP_Query(array(
+                        'post_type' => 'post',
+                        'posts_per_page' => 5,
+                        'meta_key' => 'post_views_count',
+                        'orderby' => 'meta_value_num',
+                        'order' => 'DESC',
+                    ));
+                    if ($top_stories->have_posts()):
+                        $index = 1;
+                        while ($top_stories->have_posts()):
+                            $top_stories->the_post();
+                            echo '<div class="top-story">';
+                            echo '<span class=" badge bg-danger story-index">' . $index . '</span> ';
+                            echo '<a href="' . esc_url(get_permalink()) . '">' . get_the_title() . '</a>';
+                            echo '<hr/>';
+                            echo '</div>';
+                            $index++;
+                        endwhile;
+                        wp_reset_postdata();
+                    endif;
+                    ?>
+                </div>
             </div>
         </div>
     </section>
-
-
 
 </main><!-- #main -->
 
