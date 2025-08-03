@@ -146,8 +146,9 @@ function code95_task_scripts()
 	// Load google fonts.
 	wp_enqueue_style('code95-task-google', 'https://fonts.googleapis.com', array(), _S_VERSION);
 	wp_enqueue_style('code95-task-ggoglefont', 'https://fonts.gstatic.com', array(), _S_VERSION);
-	wp_enqueue_style('code95-task-inter', 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap
+	wp_enqueue_style('code95-task-inter', 'https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap
 ', array(), _S_VERSION);
+
 
 
 	// wp_enqueue_style('owl-carousel-css', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
